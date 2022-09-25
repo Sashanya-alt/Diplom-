@@ -56,7 +56,6 @@ struct FLASH_SR_BITS
 	uint32_t PGPERR : 1;
 	uint32_t ERSERR : 1;
 	uint32_t r1 : 8;
-	
 	uint32_t BSY : 1;
 	uint32_t r2 : 15;
 	
@@ -76,7 +75,7 @@ struct FLASH_CR_BITS
 	uint32_t PG : 1;
 	uint32_t SER : 1;
 	uint32_t MER : 1;
-	uint32_t SNB : 3;
+	uint32_t SNB : 4;
 	uint32_t r0 : 1;
 	uint32_t PSIZE : 2;
 	uint32_t r1 : 6;

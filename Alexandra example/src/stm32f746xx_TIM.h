@@ -562,4 +562,8 @@ typedef struct
 		union TIMx_CCR6			CCR6;	
 	
 }	TIM_TypeDef_TIS;
+
+void TIM7_IRQHandler(void);
+void HAL_TIM_Init (void);
+
 #endif

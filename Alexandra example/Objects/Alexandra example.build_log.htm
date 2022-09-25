@@ -9,12 +9,12 @@ License Information: Alexandra Davydova, MAI, LIC=----
  
 Tool Versions:
 Toolchain:       MDK-Lite  Version: 5.35.0.2
-Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
-C Compiler:      ArmClang.exe V6.16
-Assembler:       Armasm.exe V6.16
-Linker/Locator:  ArmLink.exe V6.16
-Library Manager: ArmAr.exe V6.16
-Hex Converter:   FromElf.exe V6.16
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 7 (build 960)
+Assembler:       Armasm.exe V5.06 update 7 (build 960)
+Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
+Library Manager: ArmAr.exe V5.06 update 7 (build 960)
+Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
 CPU DLL:         SARMCM3.DLL V5.35.0.2
 Dialog DLL:      DCM.DLL V1.17.3.0
 Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
@@ -25,53 +25,13 @@ D:\Diplom\Diplom example git\Diplom-\Alexandra example\Alexandra example.uvprojx
 Project File Date:  09/25/2022
 
 <h2>Output:</h2>
-*** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
-Rebuild target 'Target 1'
-assembling startup_stm32f746xx.s...
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'Target 1'
 compiling stm32f746xx_RCC.c...
 compiling main.c...
-compiling system_stm32f7xx.c...
-stm32f746xx_GPIO.c(8): error: unknown type name 'GPIO_TypeDef_TIS'; did you mean 'GPIO_TypeDef'?
-        GPIO_TypeDef_TIS *GPIOI_MY = (GPIO_TypeDef_TIS *) GPIOI_BASE;
-        ^~~~~~~~~~~~~~~~
-        GPIO_TypeDef
-C:/Users/OMEN/AppData/Local/Arm/Packs/Keil/STM32F7xx_DFP/2.14.1/Drivers/CMSIS/Device/ST/STM32F7xx/Include\stm32f746xx.h(591): note: 'GPIO_TypeDef' declared here
-} GPIO_TypeDef;
-  ^
-stm32f746xx_GPIO.c(8): error: expected expression
-        GPIO_TypeDef_TIS *GPIOI_MY = (GPIO_TypeDef_TIS *) GPIOI_BASE;
-                                                        ^
-stm32f746xx_GPIO.c(8): error: use of undeclared identifier 'GPIO_TypeDef_TIS'
-        GPIO_TypeDef_TIS *GPIOI_MY = (GPIO_TypeDef_TIS *) GPIOI_BASE;
-                                      ^
-stm32f746xx_GPIO.c(10): error: member reference base type 'volatile uint32_t' (aka 'volatile unsigned int') is not a structure or union
-        GPIOI_MY->MODER.BIT.MODER1 = 1;
-        ~~~~~~~~~~~~~~~^~~~
-stm32f746xx_GPIO.c(14): error: member reference base type 'volatile uint32_t' (aka 'volatile unsigned int') is not a structure or union
-        GPIOI_MY->OTYPER.BIT.OT1 = 0;
-        ~~~~~~~~~~~~~~~~^~~~
-stm32f746xx_GPIO.c(18): error: member reference base type 'volatile uint32_t' (aka 'volatile unsigned int') is not a structure or union
-        GPIOI_MY->OSPEEDR.BIT.OSPEEDR1 = 0;
-        ~~~~~~~~~~~~~~~~~^~~~
-stm32f746xx_GPIO.c(22): error: member reference base type 'volatile uint32_t' (aka 'volatile unsigned int') is not a structure or union
-        GPIOI_MY->BSRR.BIT.BR1 = 0;
-        ~~~~~~~~~~~~~~^~~~
-stm32f746xx_GPIO.c(27): error: no member named 'AFRL' in 'GPIO_TypeDef'
-        GPIOI_MY->AFRL.BIT.AFRL1 = 0;
-        ~~~~~~~~  ^
-stm32f746xx_GPIO.c(3): warning: no previous prototype for function 'MX_GPIO_Init_TIS' [-Wmissing-prototypes]
-void MX_GPIO_Init_TIS()
-     ^
-stm32f746xx_GPIO.c(3): note: declare 'static' if the function is not intended to be used outside of this translation unit
-void MX_GPIO_Init_TIS()
-^
-static 
-stm32f746xx_GPIO.c(3): warning: this old-style function definition is not preceded by a prototype [-Wstrict-prototypes]
-void MX_GPIO_Init_TIS()
-                     ^
-2 warnings and 8 errors generated.
-compiling stm32f746xx_GPIO.c...
-".\Objects\Alexandra example.axf" - 8 Error(s), 2 Warning(s).
+linking...
+Program Size: Code=1498 RO-data=514 RW-data=4 ZI-data=1636  
+".\Objects\Alexandra example.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -102,8 +62,7 @@ Package Vendor: Keil
       Source file:   MDK\Device\Source\ARM\STM32F74x_75x_OPT.s
       Source file:   Drivers\CMSIS\Device\ST\STM32F7xx\Source\Templates\arm\startup_stm32f746xx.s
       Source file:   Drivers\CMSIS\Device\ST\STM32F7xx\Source\Templates\system_stm32f7xx.c
-Target not created.
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:05
 </pre>
 </body>
 </html>

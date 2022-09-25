@@ -817,6 +817,7 @@ typedef struct
 void HAL_RCC_OscConfig_TIS(void);
 int HAL_RCC_ClockConfig_TIS(uint32_t FLatency);
 uint32_t HAL_RCC_GetSysClockFreq(void);
+//void SystemCoreClockUpdate(void);
 
 //extern struct _RCC_TypeDef_TIS RCC_TIS;
 

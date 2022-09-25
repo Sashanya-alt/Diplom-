@@ -1,0 +1,35 @@
+#include "stm32f746xx.h"
+
+void TIM7_IRQHandler(void)
+{
+	
+	GPIO_TypeDef_TIS *GPIOI_LOCAL = (GPIO_TypeDef_TIS *) GPIOI_BASE;
+	
+	TIM_TypeDef_TIS *TIM7_LOCAL = (TIM_TypeDef_TIS*) TIM7_BASE;
+	TIM7_LOCAL->CR1.BIT.CEN = 1;
+	TIM7_LOCAL->SR.BIT.UIF = 0; 			
+
+	
+	if (GPIOI_LOCAL->ODR.BIT.ODR1 == 0)
+		GPIOI_LOCAL->BSRR.BIT.BS1 = 1;
+	else if (GPIOI_LOCAL->ODR.BIT.ODR1 == 1)
+		GPIOI_LOCAL->BSRR.BIT.BR1 = 1;	 
+}
+
+void HAL_TIM_Init (void)
+{
+	TIM_TypeDef_TIS *TIM7_LOCAL = (TIM_TypeDef_TIS*) TIM7_BASE;
+	
+	TIM7_LOCAL->CR1.BIT.UDIS = 0;		
+	TIM7_LOCAL->DIER.BIT.UIE = 1;		
+	TIM7_LOCAL->SR.BIT.UIF = 0; 			
+	
+	TIM7_LOCAL->PSC.BIT.PSC = 15000;	
+	
+	TIM7_LOCAL->ARR.BIT.ARR_1 = 1000;	
+
+	
+	TIM7_LOCAL->CR1.BIT.CEN = 1;
+	
+	NVIC_EnableIRQ(TIM7_IRQn);
+}

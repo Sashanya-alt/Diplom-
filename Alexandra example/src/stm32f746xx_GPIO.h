@@ -317,4 +317,5 @@ typedef struct
 }	GPIO_TypeDef_TIS;
 
 void MX_GPIO_Init_TIS(void);
+
 #endif
